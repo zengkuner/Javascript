@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>1. 访问完整数组</p>
+    <p id="demo"></p>
+    <p>2. toString()方法以逗号分隔的字符串返回数组：</p>
+    <p id="demo1"></p>
+    <p>3. join()方法将数组元素连接成一个字符串。在这个例子中我们使用“*”作为元素之间的分隔符：</p>
+    <p id="demo2"></p>
+    <p>4. pop()方法从数组中删除最后一个元素，并返回被删除的值。</p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p>5. push()方法将新元素追加到数组中：</p>
+    <button onclick="myFunction1()">试一试</button>
+    <p id="demo6"></p>
+    <p id="demo5"></p>
+    <p>6. shift()方法删除数组的第一个元素（并将所有其他元素“位移”到左侧）：</p>
+    <P id="demo7"></P>
+    <p id="demo9"></p>
+    <p id="demo8"></p>
+    <p>7. unshift()方法将新元素添加到数组的开头，并返回新数组的长度：</p>
+    <button onclick="myFunction2()">试一试</button>
+    <p id="demo11"></p>
+    <p id="demo10"></p>
+    <p>8.1 splice()方法将新元素添加到数组中：</p>
+    <button onclick="myFunction3()">试一试</button>
+    <p id="demo12"></p>
+    <p id="demo13"></p>
+    <p>8.2 splice()方法向数组添加新元素，并返回包含已删除元素（如果有）的数组：</p>
+    <button onclick="myFunction4()">试一试</button>
+    <p id="demo14"></p>
+    <p id="demo15"></p>
+    <p id="demo16"></p>
+    <p>8.3 splice()方法可用于删除数组元素：</p>
+    <button onclick="myFunction5()">试一试</button>
+    <p id="demo17"></p>
+    <p>9.1 concat()方法用于合并（连接）数组：</p>
+    <p id="demo18"></p>
+    <p>9.2 concat()方法可用于合并多个数组：</p>
+    <p id="demo19"></p>
+    <p>9.3 concat()方法也可以将值合并到数组：</p>
+    <p id="demo20"></p>
+    <p>10.1 slice()方法从数组元素1（“Orange”）开始切出数组的一部分：</p>
+    <p id="demo21"></p>
+    <p>10.2 当给slice()方法赋予两个参数时，它从start参数中选择数组元素，直到（但不包括）end参数：</p>
+    <p id="demo22"></p>
+</body>
+<script>
+    var cars = ["Audi", "BMW", "porsche"];
+    document.getElementById("demo").innerHTML = cars;
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("demo1").innerHTML = fruits.toString();
+    document.getElementById("demo2").innerHTML = fruits.join(" * ");
+    fruits.pop();
+    document.getElementById("demo3").innerHTML = fruits;
+    document.getElementById("demo4").innerHTML = fruits.pop();
+    var fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("demo6").innerHTML = fruits2;
+    function myFunction1(){
+        document.getElementById("demo5").innerHTML = fruits2.push("Kiwi");
+        document.getElementById("demo6").innerHTML = fruits2;
+    }
+    var fruits3 = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("demo7").innerHTML = fruits3;
+    document.getElementById("demo8").innerHTML = fruits3.shift();
+    document.getElementById("demo9").innerHTML = fruits3;
+    var fruits4 = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("demo11").innerHTML = fruits4;
+    function myFunction2(){
+        document.getElementById("demo10").innerHTML = fruits4.unshift("Lemon");
+        document.getElementById("demo11").innerHTML = fruits4;
+    }
+    var fruits5 = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("demo12").innerHTML = "原数组：<br/>"+fruits5;
+    function myFunction3(){
+        fruits5.splice(2,0,"Lemon","Kiwi");
+        document.getElementById("demo13").innerHTML = "新数组：<br/>"+fruits5;
+    }
+    var fruits6 = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("demo14").innerHTML = "原数组：<br/>"+fruits6;
+
+    function myFunction4(){
+        var removed = fruits6.splice(2,2,"Lemon","Kiwi");
+        document.getElementById("demo15").innerHTML = "新数组：<br/>"+fruits6;
+        document.getElementById("demo16").innerHTML = "已删除项：<br/>"+removed;
+    }
+    var fruits7 = ["Banana", "Orange", "Apple" ,"Mango"];
+    document.getElementById("demo17").innerHTML = fruits7;
+    function myFunction5(){
+        fruits7.splice(0,1);
+        document.getElementById("demo17").innerHTML = fruits7;
+    }
+
+    var myGirls = ["Emma", "Isabella"];
+    var myBoys = ["Jacob", "Michael", "Ethan"];
+    var myChildren = myGirls.concat(myBoys);
+    document.getElementById("demo18").innerHTML = myChildren;
+
+    var arr1 = ["Emma", "Isabella"];
+    var arr2 = ["Jacob", "Michael", "Ethan"];
+    var arr3 = ["Joshua", "Daniel"];
+    var myChildren1 = arr1.concat(arr2,arr3);
+    document.getElementById("demo19").innerHTML = myChildren1;
+
+    var arri = ["Emma", "Isabella"];
+    var myChildren2 = arr1.concat(["Jacob", "Michael", "Ethan"]);
+    document.getElementById("demo20").innerHTML = myChildren2;
+
+    var fruits8 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+    var citrus = fruits8.slice(1);
+    document.getElementById("demo21").innerHTML = fruits8+"<br/><br/>"+citrus;
+
+    var fruits9 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+    var citrus1 = fruits9.slice(1,3);
+    document.getElementById("demo22").innerHTML = fruits9+"<br/><br/>"+citrus1;    
+</script>
+</html>
