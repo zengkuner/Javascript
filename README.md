@@ -15,3 +15,6 @@ example: [call_apply.html](./call_apply/call_apply.html)
 
 ### [对象原型](./prototype/README.md)
 example: [prototype.html](./prototype/prototype.html)
+
+### [定时器](./timing_events/README.md)
+example: [timing_events.html](./timing_events/timing_events.html)
