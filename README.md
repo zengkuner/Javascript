@@ -12,3 +12,6 @@ example: [array_sort.html](./array_sort/array_sort.html)
 
 ### [call和apply](./call_apply/README.md)
 example: [call_apply.html](./call_apply/call_apply.html)
+
+### [对象原型](./prototype/README.md)
+example: [prototype.html](./prototype/prototype.html)
