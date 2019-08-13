@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>js对象</h1>
+    <p id="demo"></p>
+    <p>1. 您不能将新属性添加到构造函数。</p>
+    <p id="demo1"></p>
+    <p>2. 若需要向构造器添加一个新属性，则必须把它添加到构造器函数：</p>
+    <p id="demo2"></p>
+    <p>3. 原型继承</p>
+    <P id="demo3"></P>
+    <p id="demo4"></p>
+</body>
+<script>
+    function Person(first, last, age, eye){
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+    }
+    Person.nationality = "English";
+    var myFriend = new Person("Bill","Gates",62,"blue");
+    var myBrother = new Person("Steve","Jobs",56,"green");
+    document.getElementById("demo").innerHTML = "My friend is " + myFriend.age + ". My brother is " + myBrother.age;
+    document.getElementById("demo1").innerHTML = "The nationality of my friend is " + myFriend.nationality;
+
+    function Person1(first,last,age,eye){
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+        this.nationality = "English";
+    }
+    var myFriend1 = new Person1("Bill","Gates",62,"blue");
+    var myBrother1 = new Person1("Steve","Jobs",56,"green");
+    document.getElementById("demo2").innerHTML = "The nationality of my friend1 is " + myFriend1.nationality + ". The nationality of my brother1 is " + myBrother1.nationality;
+
+    function Person2(first,last,age,eye){
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+    }
+    Person2.prototype.name = function(){
+        return this.firstName + " " +this.lastName
+    };
+    Person2.prototype.nationality = "English";
+    var myFriend2 = new Person2("Bill", "Gates",62, "blue");
+    document.getElementById("demo3").innerHTML = "The nationality of my friend2 is " + myFriend2.nationality;
+    document.getElementById("demo4").innerHTML = "My firend2 is " + myFriend2.name();
+</script>
+</html>
