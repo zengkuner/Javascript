@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>call()方法</h1>
+    <p>1. fullName属性是一个方法：</p>
+    <p id="demo"></p>
+    <p>2. 此例调用person的fullName方法，在person1上使用它：</p>
+    <p id="demo1"></p>
+    <p>3. 此例调用person的fullName方法，在person1上使用它：</p>
+    <p id="demo2"></p>
+    <p>4. 在此示例中，person的fullName方法在person1上<b>应用</b>：</p>
+    <p id="demo3"></p>
+    <p>5. 在此示例中，person的fullName方法在person1上<b>应用</b>：</p>
+    <p id="demo4"></p>
+</body>
+<script>
+    var myObject = {
+        firstName:"Bill",
+        lastName:"Gates",
+        fullName:function(){
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    x = myObject.fullName();
+    document.getElementById("demo").innerHTML = x;
+
+    var person = {
+        fullName: function(){
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    var person1 = {
+        firstName:"Bill",
+        lastName:"Gates"
+    }
+    var person2 = {
+        firstName:"Steve",
+        lastName:"Jobs"
+    }
+    var x = person.fullName.call(person1);
+    document.getElementById("demo1").innerHTML = x;
+
+    var person = {
+        fullName:function(city,country){
+            return this.firstName+ " " + this.lastName + "," + city + "," + country;
+        }
+    }
+    var person1 = {
+        firstName:"Bill",
+        lastName:"Gates"
+    }
+    var person2 = {
+        firstName:"Steve",
+        lastName:"Jobs"
+    }
+    var x = person.fullName.call(person1,"Seatle","USA");
+    document.getElementById("demo2").innerHTML = x;
+
+    var person = {
+        fullName: function(){
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    var person1 = {
+        firstName:"Bill",
+        lastName:"Gates"
+    }
+    var x = person.fullName.apply(person1);
+    document.getElementById("demo3").innerHTML = x;
+
+    var person = {
+        fullName: function(city,country){
+            return this.firstName + " " + this.lastName + "," +city  + "," + country;
+        }
+    }
+    var person1 = {
+        firstName:"Bill",
+        lastName:"Gates"
+    }
+    var x = person.fullName.apply(person1,["Seatle","USA"]);
+    document.getElementById("demo4").innerHTML = x;
+</script>
+</html>
