@@ -17,4 +17,4 @@ example: [call_apply.html](./call_apply/call_apply.html)
 example: [prototype.html](./prototype/prototype.html)
 
 ### [定时器](./timing_events/README.md)
-example: [timing_events.html](./timing _events/timing_events.html)
+example: [timing_events.html](./timing_events/timing_events.html)

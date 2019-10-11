@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var regex=/ab{2,5}c/g;
+    var string="abc abbc abbbc abbbbc abbbbbc abbbbbbc";
+    console.log(string.match(regex));
+    
+    var list = ['world','ok','hello','no'];
+    var str="";
+    alert(list.length);
+    alert(list[0].length);
+    alert(list[0]);
+    for(var i=list.length-1;i>=0;i--){
+        if(list[i].length>2){
+            str += list[i];
+        }
+    }
+    alert(str);
+    /*筛选出长度大于2的字符串，倒序连接为一个字符串
+     *list = ['world','ok','hello','no']
+     */
+</script>
+</html>

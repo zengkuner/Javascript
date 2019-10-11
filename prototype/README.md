@@ -1,5 +1,5 @@
 ### JavaScript对象原型
-1.示例：
+1. 示例：
 ```javascript
 function Person(first, last, age, eye){
     this.firstName = first;
@@ -22,7 +22,7 @@ function Person(first,last,age,eye){
     this.firstName = first;
     this.lastName = last;
     this.age = age;
-    this.eyeColor = eye;
+   aaaaaaaaaaa this.eyeColor = eye;
     this.nationality = "English";
 }
 var myFriend = new Person("Bill","Gates",62,"blue");
