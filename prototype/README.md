@@ -22,7 +22,7 @@ function Person(first,last,age,eye){
     this.firstName = first;
     this.lastName = last;
     this.age = age;
-   aaaaaaaaaaa this.eyeColor = eye;
+    this.eyeColor = eye;
     this.nationality = "English";
 }
 var myFriend = new Person("Bill","Gates",62,"blue");
