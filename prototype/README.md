@@ -15,7 +15,7 @@ document.getElementById("demo1").innerHTML = "The nationality of my friend is " 
 //结果为My friend is 62. My brother is 56
 //The nationality of my friend is undefined
 ```
-此时已经无法为已有的对象构造器添加新属性了。
+>此时已经无法为已有的对象构造器添加新属性了。
 2. 如需向构造器添加一个新属性，则必须把它添加到构造器函数。示例：
 ```javascript
 function Person(first,last,age,eye){
