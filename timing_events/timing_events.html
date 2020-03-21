@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>1. 点击“试一试”。等待3秒钟，页面将提示“Hello”。</p>
+    <button onclick="myVar=setTimeout(myFunction,3000);">试一试</button>
+    <p>2. 单击“停止”以阻止第一个函数执行。</p>
+    <p>（在3秒钟之前必须单击“停止”。）</p>
+    <button onclick="clearTimeout(myVar)">停止</button>
+    <p>3. 此页面上的脚本启动这个时钟：</p>
+    <button onclick="clearInterval(myVar1)">停止时间</button>
+    <p id="demo"></p>
+</body>
+<script>
+    function myFunction(){
+        alert('Hello');
+    }
+
+    var myVar1 = setInterval(myTimer,1000);
+    function myTimer(){
+        var d = new Date();
+        document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+    }
+</script>
+</html>
